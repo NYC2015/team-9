@@ -32,6 +32,8 @@
     CGRect originalFrame;
     UIScrollView* scroller;
     BOOL isRaised;
+    
+    UIImage* imagepotato;
 }
 
 - (instancetype)initPreload{
@@ -168,7 +170,7 @@
     check = [[ZFCheckbox alloc] init];
     check.lineWidth = 2.0;
     check.translatesAutoresizingMaskIntoConstraints = NO;
-    [check addTarget:self action:@selector(checkedOff) forControlEvents:UIControlEventTouchUpInside];
+    [check addTarget:self action:@selector(uploadDisBitch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:check];
     [check setUserInteractionEnabled:YES];
     
@@ -304,6 +306,9 @@ didFinishNormalizingCapturedImage:(FastttCapturedImage *)capturedImage
      *  services than images with non-standard orientations.
      */
     [photo setImage:capturedImage.fullImage];
+    
+    imagepotato = capturedImage.scaledImage;
+    
 //    UIImageWriteToSavedPhotosAlbum(capturedImage.fullImage, nil, nil, nil);
 
     
@@ -346,7 +351,33 @@ didFinishNormalizingCapturedImage:(FastttCapturedImage *)capturedImage
 }
 
 - (void)uploadDisBitch{
-    
+    if (![name.text isEqualToString:@""] && ![email.text isEqualToString:@""] && ![zipcode.text isEqualToString:@""]) {
+        PFObject *signature = [PFObject objectWithClassName:@"signees"];
+        signature[@"name"] = name.text;
+        signature[@"email"] = email.text;
+        signature[@"zipcode"] = zipcode.text;
+        
+        NSData* data = UIImageJPEGRepresentation(imagepotato, 0.5f);
+        PFFile *imageFile = [PFFile fileWithName:[[NSString stringWithFormat:[name text]] stringByAppendingString:@".jpg"] data:data];
+        [signature setObject:imageFile forKey:@"picture"];
+
+        [signature saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"saved!");
+                [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (!error) {
+                        // The image has now been uploaded to Parse. Associate it with a new object
+                    } else {
+                        
+                    }
+                }];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                [signature pin];
+                [signature saveEventually];
+            }
+        }];
+    }
 }
 
 /*
