@@ -24,16 +24,16 @@
     UITextField* name;
     UITextField* email;
     UITextField* zipcode;
-    
     NSArray* checkfields;
-    
     UIImageView* photo;
-    
     UIButton* capture;
     UIButton* cancelPhoto;
-    
     ZFCheckbox* check;
+    CGRect originalFrame;
+    UIScrollView* scroller;
+    BOOL isRaised;
     
+    UIImage* imagepotato;
 }
 
 - (instancetype)initPreload{
@@ -48,19 +48,26 @@
     
     //    [self.view setBackgroundColor:[UIColor colorWithRed:152.0f/255.0f green:200.0f/255.0f blue:99.0f/255.0f alpha:1.0f]];
     
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    UITapGestureRecognizer* dismissKeyboard = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboardCustom)];
     
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     UIBarButtonItem* bye = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemCancel target:self action:@selector(done)];
     self.navigationItem.leftBarButtonItem = bye;
     
-    UIScrollView* scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, self.view.frame.size.height)];
+     scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, self.view.frame.size.height)];
     [self.view addSubview:scroller];
+    [scroller setCanCancelContentTouches:YES];
+    [scroller addGestureRecognizer:dismissKeyboard];
+
+    originalFrame = scroller.frame;
+    isRaised = NO;
     
     NSLog(@"%f", scroller.frame.size.height);
     
     [self.navigationItem setTitle:@"Join Our Cause"];
     
     name = [UITextField new];
+    [name setDelegate:self];
     name.translatesAutoresizingMaskIntoConstraints = NO;
     name.backgroundColor = [UIColor whiteColor];
     name.layer.cornerRadius = 10;
@@ -113,8 +120,8 @@
                                               @"button.width = 60",
                                               @"cancel.bottom = self.bottom - 15",
                                               @"cancel.centerX = self.centerX",
-                                              @"cancel.height = 60",
-                                              @"cancel.width = 60",
+                                              @"cancel.height = 45",
+                                              @"cancel.width = 45",
                                               ]
                                     metrics:@{
                                               
@@ -131,6 +138,7 @@
 
     
     email = [UITextField new];
+    [email setDelegate:self];
     email.translatesAutoresizingMaskIntoConstraints = NO;
     email.backgroundColor = [UIColor whiteColor];
     email.layer.cornerRadius = 10;
@@ -143,6 +151,7 @@
     emailL.text = @"Email";
     [scroller addSubview:email];
     zipcode = [UITextField new];
+    [zipcode setDelegate:self];
     zipcode.translatesAutoresizingMaskIntoConstraints = NO;
     zipcode.backgroundColor = [UIColor whiteColor];
     zipcode.layer.cornerRadius = 10;
@@ -159,8 +168,11 @@
     CGRect screen = [[UIScreen mainScreen] bounds];
     
     check = [[ZFCheckbox alloc] init];
+    check.lineWidth = 2.0;
     check.translatesAutoresizingMaskIntoConstraints = NO;
-    [scroller addSubview:check];
+    [check addTarget:self action:@selector(uploadDisBitch) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:check];
+    [check setUserInteractionEnabled:YES];
     
     [scroller addCompactConstraints:@[
                                       @"name.centerX = self.centerX",
@@ -181,10 +193,7 @@
                                       @"alabel.left = self.left + 16",
                                       @"plabel.top = email.bottom + ratioDifference",
                                       @"plabel.left = self.left + 16",
-                                      @"check.height = 60",
-                                      @"check.width = 60",
-                                      @"check.top = zipcode.bottom + 50",
-                                      @"check.centerX = self.centerX"
+
                                       ]
                             metrics:@{
                                       @"ratioDifference":@(self.view.frame.size.height/32),
@@ -198,14 +207,41 @@
                                       @"nlabel":nameL,
                                       @"alabel":emailL,
                                       @"plabel":zipcodeL,
-                                      @"check":check
                                       }];
+    
+    [self.view addCompactConstraints:@[
+                                       @"check.height = 60",
+                                       @"check.width = 60",
+                                       @"check.top = zipcode.bottom + 50",
+                                       @"check.centerX = self.centerX"
+                                       ]
+                             metrics:@{
+                                       
+                                       }
+                               views:@{
+                                       @"self":self.view,
+                                       @"check":check,
+                                       @"zipcode":zipcode
+                                       }];
     
     check.layer.cornerRadius = 30;
     check.clipsToBounds = YES;
     
     [scroller updateConstraints];
     [scroller setContentSize:CGSizeMake(self.view.frame.size.width, 800)];
+    
+    
+    // Listen for keyboard appearances and disappearances
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -231,6 +267,10 @@
         [cancelPhoto setAlpha:0.0];
     }];
     photo.image = nil;
+}
+
+- (void)checkedOff{
+    
 }
 
 #pragma mark - IFTTTFastttCameraDelegate
@@ -266,10 +306,78 @@ didFinishNormalizingCapturedImage:(FastttCapturedImage *)capturedImage
      *  services than images with non-standard orientations.
      */
     [photo setImage:capturedImage.fullImage];
+    
+    imagepotato = capturedImage.scaledImage;
+    
 //    UIImageWriteToSavedPhotosAlbum(capturedImage.fullImage, nil, nil, nil);
 
     
 //    [capturedImage ]
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [name resignFirstResponder];
+    [zipcode resignFirstResponder];
+    [email resignFirstResponder];
+}
+
+- (void)keyboardDidShow: (NSNotification *) notif{
+    // Do something here
+    if (!isRaised) {
+        isRaised = YES;
+        [UIView animateWithDuration:0.2 animations:^{
+            scroller.frame = CGRectOffset(scroller.frame, 0, -180);
+            [self.view layoutSubviews];
+        }];
+    }
+}
+
+- (void)keyboardDidHide: (NSNotification *) notif{
+    // Do something here
+    if (isRaised) {
+        isRaised = NO;
+        [UIView animateWithDuration:0.2 animations:^{
+            scroller.frame = originalFrame;
+            [self.view layoutSubviews];
+        }];
+    }
+}
+
+
+- (void)dismissKeyboardCustom{
+    [name resignFirstResponder];
+    [zipcode resignFirstResponder];
+    [email resignFirstResponder];
+}
+
+- (void)uploadDisBitch{
+    if (![name.text isEqualToString:@""] && ![email.text isEqualToString:@""] && ![zipcode.text isEqualToString:@""]) {
+        PFObject *signature = [PFObject objectWithClassName:@"signees"];
+        signature[@"name"] = name.text;
+        signature[@"email"] = email.text;
+        signature[@"zipcode"] = zipcode.text;
+        
+        NSData* data = UIImageJPEGRepresentation(imagepotato, 0.5f);
+        PFFile *imageFile = [PFFile fileWithName:[[NSString stringWithFormat:[name text]] stringByAppendingString:@".jpg"] data:data];
+        [signature setObject:imageFile forKey:@"picture"];
+
+        [signature saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"saved!");
+                [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (!error) {
+                        // The image has now been uploaded to Parse. Associate it with a new object
+                    } else {
+                        
+                    }
+                }];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                [signature pin];
+                [signature saveEventually];
+            }
+        }];
+    }
 }
 
 /*
