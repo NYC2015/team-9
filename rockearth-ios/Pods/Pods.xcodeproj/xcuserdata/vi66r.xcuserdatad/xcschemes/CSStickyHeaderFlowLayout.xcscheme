@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ECBA3BD192E532336F0F2808"
+               BlueprintIdentifier = "6121D23EF69F0696429129BC"
                BuildableName = "libCSStickyHeaderFlowLayout.a"
                BlueprintName = "CSStickyHeaderFlowLayout"
                ReferencedContainer = "container:Pods.xcodeproj">

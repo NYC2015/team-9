@@ -10,10 +10,13 @@
 #import "locationSingleton.h"
 #import "CampaignTableViewCell.h"
 #import <Parse/Parse.h>
+#import "campaignFormViewController.h"
+#import "campaignFormTableViewController.h"
 
 @interface campaignTableViewController : UITableViewController <centralLocationDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray* campaigns;
 @property (nonatomic, strong) CLLocation* location;
+@property (nonatomic, strong) NSMutableArray* campaignImages;
 
 @end

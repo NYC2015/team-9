@@ -54,6 +54,7 @@ PODS:
     - FBSDKCoreKit (~> 4.7)
     - FBSDKLoginKit (~> 4.7)
     - Parse (~> 1.9)
+  - PureLayout (3.0.1)
   - RXPromise (0.13.1)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
@@ -63,6 +64,9 @@ PODS:
     - SocketRocket (~> 0.2)
   - SocketRocket (0.4.1)
   - SpinKit (1.2.0)
+  - VGParallaxHeader (0.0.6):
+    - PureLayout
+  - ZFCheckbox (0.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -82,6 +86,8 @@ DEPENDENCIES:
   - SlackTextViewController
   - socket.IO
   - SpinKit (~> 1.2)
+  - VGParallaxHeader
+  - ZFCheckbox (~> 0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
@@ -97,11 +103,14 @@ SPEC CHECKSUMS:
   MGSpotyViewController: e55176f106779a776913d23019c1343704e1dadf
   Parse: 712efbc476d4f47b0f96b70db7e53101575753aa
   ParseFacebookUtilsV4: aadebfaaaf4a45bf0a0992863bf48c8fc49189e3
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
   RXPromise: 1aaff7ad7ac17c7e8dd9ea0169d13ed8df3654d2
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SlackTextViewController: 139ffc5b09276ff5ac1609ac78eafab702fc974e
   socket.IO: eaaaea33481d8a81d8f78e331f0c72ba44758036
   SocketRocket: ee0b5c34182d37bb4f1f8d628bbe737718126daa
   SpinKit: 65906a8b534a4e14cbfd3f8b0b6c329131faef4a
+  VGParallaxHeader: 1213aba58c9b0aea84f9e81ad526fde57aa4fe48
+  ZFCheckbox: c3429f83d64f3ba566d9aa8fd45245baf9733e54
 
 COCOAPODS: 0.38.2
