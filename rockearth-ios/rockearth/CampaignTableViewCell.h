@@ -11,7 +11,9 @@
 @interface CampaignTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView* background;
+@property (nonatomic, strong) UIImageView* overLay;
 @property (nonatomic, strong) UILabel* campaignName;
 @property (nonatomic, strong) UILabel* location;
+@property (nonatomic, strong) UILabel* sigs;
 
 @end

@@ -10,8 +10,9 @@
 #import "locationSingleton.h"
 #import <Parse/Parse.h>
 
-@interface loginViewController : ViewController <centralLocationDelegate>
+@interface loginViewController : ViewController 
 
+@property (strong, nonatomic) IBOutlet UIButton *loginButton;
 
 @property (nonatomic, strong) CLLocation* location;
 

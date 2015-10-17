@@ -30,11 +30,11 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
     
-    loginViewController* login = [loginViewController new];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = login;
-    [self.window makeKeyAndVisible];
+//    loginViewController* login = [loginViewController new];
+//    
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.rootViewController = login;
+//    [self.window makeKeyAndVisible];
     
     return YES;
 }

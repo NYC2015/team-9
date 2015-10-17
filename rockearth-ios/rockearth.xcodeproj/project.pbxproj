@@ -20,8 +20,9 @@
 		E46594E91BD1D6C7009C000E /* campaignTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46594E81BD1D6C7009C000E /* campaignTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E46594EC1BD1D731009C000E /* CampaignTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E46594EB1BD1D731009C000E /* CampaignTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		E46594EE1BD1D827009C000E /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = E46594ED1BD1D826009C000E /* location.png */; settings = {ASSET_TAGS = (); }; };
-		E46594F01BD1D88C009C000E /* indianpointnuclearpowerplant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46594EF1BD1D88C009C000E /* indianpointnuclearpowerplant.jpg */; settings = {ASSET_TAGS = (); }; };
+		E46594F01BD1D88C009C000E /* fallout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46594EF1BD1D88C009C000E /* fallout.jpg */; settings = {ASSET_TAGS = (); }; };
 		E46594F31BD1E3D8009C000E /* locationSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E46594F21BD1E3D8009C000E /* locationSingleton.m */; settings = {ASSET_TAGS = (); }; };
+		E46DA79B1BD2016400A3C2F7 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DA79A1BD2016400A3C2F7 /* overlay.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +68,10 @@
 		E46594EA1BD1D731009C000E /* CampaignTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampaignTableViewCell.h; sourceTree = "<group>"; };
 		E46594EB1BD1D731009C000E /* CampaignTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampaignTableViewCell.m; sourceTree = "<group>"; };
 		E46594ED1BD1D826009C000E /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
-		E46594EF1BD1D88C009C000E /* indianpointnuclearpowerplant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = indianpointnuclearpowerplant.jpg; sourceTree = "<group>"; };
+		E46594EF1BD1D88C009C000E /* fallout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fallout.jpg; sourceTree = "<group>"; };
 		E46594F11BD1E3D8009C000E /* locationSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locationSingleton.h; sourceTree = "<group>"; };
 		E46594F21BD1E3D8009C000E /* locationSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = locationSingleton.m; sourceTree = "<group>"; };
+		E46DA79A1BD2016400A3C2F7 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		FC705D1FF560DEC2407AD694 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,7 +156,8 @@
 				E46594EB1BD1D731009C000E /* CampaignTableViewCell.m */,
 				E46594F11BD1E3D8009C000E /* locationSingleton.h */,
 				E46594F21BD1E3D8009C000E /* locationSingleton.m */,
-				E46594EF1BD1D88C009C000E /* indianpointnuclearpowerplant.jpg */,
+				E46594EF1BD1D88C009C000E /* fallout.jpg */,
+				E46DA79A1BD2016400A3C2F7 /* overlay.png */,
 				E40C89D41BD1C0CD00686908 /* Main.storyboard */,
 				E40C89D71BD1C0CD00686908 /* Assets.xcassets */,
 				E40C89D91BD1C0CD00686908 /* LaunchScreen.storyboard */,
@@ -295,10 +298,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46DA79B1BD2016400A3C2F7 /* overlay.png in Resources */,
 				E40C89DB1BD1C0CD00686908 /* LaunchScreen.storyboard in Resources */,
 				E40C89D81BD1C0CD00686908 /* Assets.xcassets in Resources */,
 				E46594EE1BD1D827009C000E /* location.png in Resources */,
-				E46594F01BD1D88C009C000E /* indianpointnuclearpowerplant.jpg in Resources */,
+				E46594F01BD1D88C009C000E /* fallout.jpg in Resources */,
 				E40C89D61BD1C0CD00686908 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

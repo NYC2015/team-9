@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "locationSingleton.h"
 #import "CampaignTableViewCell.h"
+#import <Parse/Parse.h>
 
-@interface campaignTableViewController : UITableViewController <centralLocationDelegate>
+@interface campaignTableViewController : UITableViewController <centralLocationDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray* campaigns;
+@property (nonatomic, strong) CLLocation* location;
 
 @end

@@ -12,31 +12,48 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="login">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7O4-Rd-Vbb">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Temp Login"/>
+                                <connections>
+                                    <segue destination="DFq-BS-0eZ" kind="show" id="VCq-cE-IQl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7O4-Rd-Vbb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aGJ-EQ-fvs"/>
+                            <constraint firstItem="7O4-Rd-Vbb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uCx-ON-9jI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="7O4-Rd-Vbb" id="QtF-1I-f0U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="71" y="316"/>
         </scene>
-        <!--Campaign Table View Controller-->
-        <scene sceneID="1f0-bO-PCK">
+        <!--Campaigns-->
+        <scene sceneID="V0b-vi-hye">
             <objects>
-                <tableViewController id="QKN-RV-gzy" customClass="campaignTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PeZ-Kk-cwv">
+                <tableViewController title="Campaigns" id="JPD-DQ-twl" customClass="campaignTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aNq-Gs-xK1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2C6-5y-OEw">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bVz-co-aPm">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2C6-5y-OEw" id="aqU-jM-Cdn">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bVz-co-aPm" id="LWr-aT-Gml">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
@@ -45,14 +62,32 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="QKN-RV-gzy" id="e8N-34-Poh"/>
-                            <outlet property="delegate" destination="QKN-RV-gzy" id="oFD-az-weF"/>
+                            <outlet property="dataSource" destination="JPD-DQ-twl" id="PDe-7H-c5s"/>
+                            <outlet property="delegate" destination="JPD-DQ-twl" id="mAN-Nj-PQo"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="4FH-pC-EAc"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RCJ-ax-0Oa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oms-rM-Xmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="333"/>
+            <point key="canvasLocation" x="928" y="1159"/>
+        </scene>
+        <!--Campaigns-->
+        <scene sceneID="Lgv-md-8tB">
+            <objects>
+                <navigationController title="Campaigns" id="DFq-BS-0eZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DJ1-gs-aoe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JPD-DQ-twl" kind="relationship" relationship="rootViewController" id="tCA-hs-611"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZJ-20-Zpj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="1159"/>
         </scene>
     </scenes>
 </document>
