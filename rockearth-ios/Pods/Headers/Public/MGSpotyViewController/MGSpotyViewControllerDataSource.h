@@ -1,0 +1,1 @@
+../../../MGSpotyViewController/MGSpotyViewController/MGSpotyViewControllerDataSource.h
