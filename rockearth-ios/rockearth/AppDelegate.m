@@ -30,6 +30,21 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
     
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [UIColor colorWithRed:152.0f/255.0f green:180.0f/255.0f blue:99.0f/255.0f alpha:1.0f].CGColor);
+    CGContextFillRect(context, rect);
+    UIImage *navBarImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    [[UINavigationBar appearance] setBackgroundImage:navBarImage forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor whiteColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"HelveticaNeue-Medium" size:16.0], NSFontAttributeName,nil]];
+    
 //    loginViewController* login = [loginViewController new];
 //    
 //    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

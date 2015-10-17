@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="detailViewController">
+            <connections>
+                <outlet property="image" destination="ng8-9i-4Xb" id="rwe-Nf-aeg"/>
+                <outlet property="text" destination="dHI-uX-MIY" id="zdq-bT-HRW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" userLabel="detailViewController" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="detailViewController" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fallout.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ng8-9i-4Xb">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="338"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ng8-9i-4Xb" secondAttribute="height" multiplier="16:9" id="up4-D8-unH"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dHI-uX-MIY">
+                    <rect key="frame" x="0.0" y="348" width="600" height="242"/>
+                    <animations/>
+                    <mutableString key="text">The Problem
+Built over 40 years ago, Indian Point Nuclear Plant is located 25 miles north of New York City on the Hudson River at the intersection of two earthquake faults, the Ramapo Fault and the Stamford-to-Peekskill Fault Line. Indian Point is also sited in the most populous location of any US nuclear plant, with 20 million people living or working within 50 miles of the plant, and experts say that evacuation plans are severely deficient. A catastrophic accident at Indian Point could kill tens of thousands, cause many more long-term cancers, and render NYC and much of the Hudson Valley uninhabitable. The Nuclear Regulatory Commission (NRC) is considering Entergy’s application to relicense Indian Point Reactors (IP) 2 &amp; 3 which are operating under their original 40 year licenses, expiring in 2013 and 2015, respectively. Both IP2 and IP3 have been plagued with major safety problems for decades. As the reactors age, Indian Point will experience an increasing number of equipment and safety-related failures. As a recent explosion and shutdowns at Indian Point show, the plant’s aging reactors pose an unnecessary and unacceptable risk to New York City residents. In addition to its proximity to one of the largest metropolitan areas in the United States and being located on two significant fault lines, Indian Point has been rated the most vulnerable nuclear plant in the country to an earthquake-induced meltdown. It is also known to be a potential target for terrorism because of its proximity to NYC, presenting a tremendous security risk. A 2011 Natural Resources Defense Council report found a major accident at the plant could require the evacuation or sheltering of nearly 10 million people from radiation exposure (including most city residents) and render much of NYC too radioactively contaminated to live in. A 2004 Union of Concerned Scientists study determined the economic costs of an accident could be as high as $1.1 trillion, primarily because of the impact on NYC.
+
+What You Can Do
+Rock the Earth is working with several organizations including the Nuclear Information and Resource Service (NIRS) to convince New York City Commissioners to take a stand in calling for the shut down of Indian Point. Currently, before NY City Council is Res 0694-2015, introduced by Councilmember Donovan Richards and co-sponsored by a growing number of colleagues calling for the closure of the Indian Point Nuclear Power Plant and urging the State of New York to implement a just transition plan for the plant’s workforce and local communities. We ask you to support the resolution and the efforts of Governor Cuomo and Attorney General Eric Schneiderman to prevent the federal relicensing of Indian Point. Take action now! Contact your City Councilmember and ask her or him to co-sponsor the Indian Point closure resolution (Res 0694-2015). To find and contact your City Councilmember go here: http://council.nyc.gov/html/members/members.shtml In addition, please consider contacting Governor Cuomo and ask that Indian Point be shut down! You can reach him at 1-518-474-8390 or: https://www.governor.ny.gov/contact</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ng8-9i-4Xb" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="7Bz-ek-TBI"/>
+                <constraint firstItem="dHI-uX-MIY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="95G-L1-vgz"/>
+                <constraint firstAttribute="bottom" secondItem="dHI-uX-MIY" secondAttribute="bottom" constant="10" id="MC5-QN-EnM"/>
+                <constraint firstItem="dHI-uX-MIY" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="NMO-ES-3x4"/>
+                <constraint firstItem="ng8-9i-4Xb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OSg-dc-Cmb"/>
+                <constraint firstItem="ng8-9i-4Xb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hlp-3R-vLK"/>
+                <constraint firstItem="dHI-uX-MIY" firstAttribute="top" secondItem="ng8-9i-4Xb" secondAttribute="bottom" constant="10" id="ywE-ig-N5y"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="fallout.jpg" width="3920" height="1822"/>
+    </resources>
+</document>

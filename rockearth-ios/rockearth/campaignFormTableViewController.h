@@ -11,11 +11,15 @@
 #import <VGParallaxHeader/UIScrollView+VGParallaxHeader.h>
 #import "campaignOptionsTableViewCell.h"
 #import "campaignFormViewController.h"
+#import "photosViewController.h"
+#import "detailViewController.h"
 
 @interface campaignFormTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray* options;
 
 - (instancetype)initWithImage:(UIImage*)image;
+@property (nonatomic, strong) PFObject* campaign;
+- (instancetype)initWithImage:(UIImage*)image andCampaign:(PFObject*)campaign;
 
 @end

@@ -34,10 +34,18 @@
     BOOL isRaised;
     
     UIImage* imagepotato;
+    KLCPopup* popup;
+    
+    UIButton* flipCam;
+    
+    BOOL front;
 }
 
-- (instancetype)initPreload{
+- (instancetype)initPreloadWithCampaign:(PFObject*)campaign{
     self = [super init];
+    
+    self.campaign = campaign;
+    
     _fastCamera = [FastttCamera new];
     
     return self;
@@ -62,6 +70,8 @@
     originalFrame = scroller.frame;
     isRaised = NO;
     
+    front = NO;
+    
     NSLog(@"%f", scroller.frame.size.height);
     
     [self.navigationItem setTitle:@"Join Our Cause"];
@@ -69,7 +79,7 @@
     name = [UITextField new];
     [name setDelegate:self];
     name.translatesAutoresizingMaskIntoConstraints = NO;
-    name.backgroundColor = [UIColor whiteColor];
+    name.backgroundColor = [UIColor lightGrayColor];
     name.layer.cornerRadius = 10;
     UILabel* nameL = [UILabel new];
     nameL.translatesAutoresizingMaskIntoConstraints = NO;
@@ -110,6 +120,13 @@
     cancelPhoto.translatesAutoresizingMaskIntoConstraints = NO;
     [cancelPhoto setAlpha:0.0];
     [_fastCamera.view addSubview:cancelPhoto];
+    
+    flipCam = [UIButton buttonWithType:UIButtonTypeCustom];
+    [flipCam addTarget:self action:@selector(flip) forControlEvents:UIControlEventTouchUpInside];
+    [flipCam setBackgroundImage:[[UIImage imageNamed:@"flip.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:normal];
+    [flipCam setTintColor:[UIColor whiteColor]];
+    flipCam.translatesAutoresizingMaskIntoConstraints = NO;
+    [_fastCamera.view addSubview:flipCam];
 
     
     
@@ -122,6 +139,10 @@
                                               @"cancel.centerX = self.centerX",
                                               @"cancel.height = 45",
                                               @"cancel.width = 45",
+                                              @"flip.right = self.right - 10",
+                                              @"flip.top = self.top + 10",
+                                              @"flip.height = 30",
+                                              @"flip.width = 30"
                                               ]
                                     metrics:@{
                                               
@@ -129,7 +150,8 @@
                                       views:@{
                                               @"self":_fastCamera.view,
                                               @"button":capture,
-                                              @"cancel":cancelPhoto
+                                              @"cancel":cancelPhoto,
+                                              @"flip":flipCam
                                               }];
     
     capture.layer.cornerRadius = 30;
@@ -140,7 +162,7 @@
     email = [UITextField new];
     [email setDelegate:self];
     email.translatesAutoresizingMaskIntoConstraints = NO;
-    email.backgroundColor = [UIColor whiteColor];
+    email.backgroundColor = [UIColor lightGrayColor];
     email.layer.cornerRadius = 10;
     UILabel* emailL = [UILabel new];
     emailL.translatesAutoresizingMaskIntoConstraints = NO;
@@ -153,7 +175,7 @@
     zipcode = [UITextField new];
     [zipcode setDelegate:self];
     zipcode.translatesAutoresizingMaskIntoConstraints = NO;
-    zipcode.backgroundColor = [UIColor whiteColor];
+    zipcode.backgroundColor = [UIColor lightGrayColor];
     zipcode.layer.cornerRadius = 10;
     UILabel* zipcodeL = [UILabel new];
     zipcodeL.translatesAutoresizingMaskIntoConstraints = NO;
@@ -164,6 +186,13 @@
     [zipcodeL setTintColor:[UIColor whiteColor]];
     [scroller addSubview:zipcodeL];
     [scroller addSubview:zipcode];
+    
+    UILabel* final = [UILabel new];
+    final.translatesAutoresizingMaskIntoConstraints = NO;
+    [final setText:@"I acknowldege that I would like to support this campaign and receive more information about it."];
+    [final setNumberOfLines:0];
+    [final setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:final];
     
     CGRect screen = [[UIScreen mainScreen] bounds];
     
@@ -212,8 +241,11 @@
     [self.view addCompactConstraints:@[
                                        @"check.height = 60",
                                        @"check.width = 60",
-                                       @"check.top = zipcode.bottom + 50",
-                                       @"check.centerX = self.centerX"
+                                       @"check.top = zipcode.bottom + 100",
+                                       @"check.centerX = self.centerX",
+                                       @"final.bottom = check.top - 10",
+                                       @"final.centerX = self.centerX",
+                                       @"final.width = self.width - 28"
                                        ]
                              metrics:@{
                                        
@@ -221,14 +253,15 @@
                                views:@{
                                        @"self":self.view,
                                        @"check":check,
-                                       @"zipcode":zipcode
+                                       @"zipcode":zipcode,
+                                       @"final":final
                                        }];
     
     check.layer.cornerRadius = 30;
     check.clipsToBounds = YES;
     
     [scroller updateConstraints];
-    [scroller setContentSize:CGSizeMake(self.view.frame.size.width, 800)];
+    [scroller setContentSize:CGSizeMake(self.view.frame.size.width, 900)];
     
     
     // Listen for keyboard appearances and disappearances
@@ -250,6 +283,22 @@
 
 - (void)done{
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)flip{
+    
+    if (front) {
+        front = NO;
+        if ([FastttCamera isCameraDeviceAvailable:FastttCameraDeviceRear]) {
+            [self.fastCamera setCameraDevice:FastttCameraDeviceRear];
+        }
+    } else {
+        front = YES;
+        if ([FastttCamera isCameraDeviceAvailable:FastttCameraDeviceFront]) {
+            [self.fastCamera setCameraDevice:FastttCameraDeviceFront];
+        }
+    }
+    
 }
 
 - (void)snap{
@@ -309,7 +358,7 @@ didFinishNormalizingCapturedImage:(FastttCapturedImage *)capturedImage
     
     imagepotato = capturedImage.scaledImage;
     
-//    UIImageWriteToSavedPhotosAlbum(capturedImage.fullImage, nil, nil, nil);
+    UIImageWriteToSavedPhotosAlbum(capturedImage.fullImage, nil, nil, nil);
 
     
 //    [capturedImage ]
@@ -350,12 +399,56 @@ didFinishNormalizingCapturedImage:(FastttCapturedImage *)capturedImage
     [email resignFirstResponder];
 }
 
+- (UIView*)getConfirm{
+    UITapGestureRecognizer* taptap = [[UITapGestureRecognizer alloc] init];
+    [taptap addTarget:self action:@selector(lefin)];
+    UIView* confirm = [[UIView alloc] init];
+    [confirm setBackgroundColor:[UIColor whiteColor]];
+    [confirm setFrame:CGRectMake(0, 0, 120, 120)];
+    [confirm addGestureRecognizer:taptap];
+    UIImageView* checkMark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"check.png"]];
+    checkMark.translatesAutoresizingMaskIntoConstraints = NO;
+    [confirm addSubview:checkMark];
+    UILabel* success = [UILabel new];
+    success.translatesAutoresizingMaskIntoConstraints = NO;
+    [success setText:@"Success"];
+    [confirm addSubview:success];
+    [confirm addCompactConstraints:@[
+                                     @"check.height = 60",
+                                     @"check.width = 60",
+                                     @"check.centerX = self.centerX",
+                                     @"check.centerY = self.centerY",
+                                     @"success.top = check.bottom + 7.5",
+                                     @"success.centerX = self.centerX"
+                                     ]
+                           metrics:@{
+                                     
+                                     }
+                             views:@{
+                                     @"self":confirm,
+                                     @"check":checkMark,
+                                     @"success":success
+                                     }];
+    [confirm updateConstraints];
+    
+    confirm.layer.cornerRadius =10;
+    confirm.clipsToBounds = YES;
+    
+    return confirm;
+}
+
+
 - (void)uploadDisBitch{
     if (![name.text isEqualToString:@""] && ![email.text isEqualToString:@""] && ![zipcode.text isEqualToString:@""]) {
         PFObject *signature = [PFObject objectWithClassName:@"signees"];
         signature[@"name"] = name.text;
         signature[@"email"] = email.text;
         signature[@"zipcode"] = zipcode.text;
+        signature[@"locationName"] = @"New York, NY";
+        
+        signature[@"campaign"] = self.campaign;
+        signature[@"campaignID"] = self.campaign.objectId;
+        
         
         NSData* data = UIImageJPEGRepresentation(imagepotato, 0.5f);
         PFFile *imageFile = [PFFile fileWithName:[[NSString stringWithFormat:[name text]] stringByAppendingString:@".jpg"] data:data];
@@ -371,13 +464,31 @@ didFinishNormalizingCapturedImage:(FastttCapturedImage *)capturedImage
                         
                     }
                 }];
-                [self dismissViewControllerAnimated:YES completion:nil];
+                NSMutableArray* array = self.campaign[@"signees"];
+                self.campaign[@"signees"] = [array arrayByAddingObject:signature.objectId];
+                
+                [self.campaign saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    if (succeeded) {
+                        NSLog(@"yay");
+                    } else {
+                        [self.campaign saveEventually];
+                    }
+                }];
+                
+                popup = [KLCPopup popupWithContentView:[self getConfirm] showType:KLCPopupShowTypeGrowIn dismissType:KLCPopupDismissTypeShrinkOut maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:NO dismissOnContentTouch:NO];
+                [popup show];
+                
             } else {
                 [signature pin];
                 [signature saveEventually];
             }
         }];
     }
+}
+
+- (void)lefin{
+    [popup dismiss:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

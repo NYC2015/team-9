@@ -33,6 +33,14 @@
     return self;
 }
 
+- (instancetype)initWithImage:(UIImage*)image andCampaign:(PFObject*)campaign{
+    self = [super initWithStyle:UITableViewStylePlain];
+    self.image = image;
+    self.campaign = campaign;
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -117,16 +125,39 @@
                         [[UIColor redColor] colorWithAlphaComponent:0.60], [UIColor redColor]];
     [cell.image setTintColor:[colors objectAtIndex:indexPath.row]];
     
-    NSArray* text = @[@"Sign Petition", @"Campaign Photos", @"Campaign Info"];
+    NSArray* text = @[@"Sign Petition", @"Campaign Photos", @"Campaign Notes"];
     [cell.label setText:[text objectAtIndex:indexPath.row]];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    campaignFormViewController* form = [[campaignFormViewController alloc] initPreload];
-    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:form];
-    [self presentViewController:nav animated:YES completion:nil];
+    
+    if (indexPath.row == 0) {
+        campaignFormViewController* form = [[campaignFormViewController alloc] initPreloadWithCampaign:self.campaign];
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:form];
+        [self presentViewController:nav animated:YES completion:nil];
+    } else if (indexPath.row == 1){
+        
+            PFQuery* query = [PFQuery queryWithClassName:@"signees"];
+            [query whereKey:@"campaignID" equalTo:self.campaign.objectId];
+            [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                
+                if (error == nil) {
+                    NSLog(@"%@", objects);
+                    
+                    photosViewController* photos = [[photosViewController alloc] initWithPeople:objects];
+                    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:photos];
+                    [self presentViewController:nav animated:YES completion:nil];
+                }
+            }];
+    } else if (indexPath.row == 2){
+        
+        detailViewController* detail = [[detailViewController alloc] initWithNibName:@"detailViewController" bundle:nil];
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:detail];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
+    
 }
 
 
