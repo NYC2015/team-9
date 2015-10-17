@@ -25,4 +25,9 @@
 
 @property (nonatomic, strong) CLLocationManager* locationManager;
 
+#pragma mark - Public Methods
+
++ (instancetype)sharedLocation;
+- (void)findLocaton;
+
 @end

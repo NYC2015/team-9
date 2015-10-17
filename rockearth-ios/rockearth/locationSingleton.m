@@ -22,6 +22,8 @@
 }
 
 - (void)findLocaton{
+    NSLog(@"initializing location");
+    
     _locationManager = [[CLLocationManager alloc] init];
     [_locationManager setDelegate:self];
     [_locationManager requestWhenInUseAuthorization];

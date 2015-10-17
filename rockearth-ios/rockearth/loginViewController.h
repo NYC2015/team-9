@@ -7,7 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "locationSingleton.h"
+#import <Parse/Parse.h>
 
-@interface loginViewController : ViewController
+@interface loginViewController : ViewController <centralLocationDelegate>
+
+
+@property (nonatomic, strong) CLLocation* location;
 
 @end
