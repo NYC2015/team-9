@@ -10,7 +10,7 @@
 #import <FastttCamera/FastttCamera.h>
 #import <ZFCheckbox/ZFCheckbox.h>
 
-@interface campaignFormViewController : UIViewController<FastttCameraDelegate>
+@interface campaignFormViewController : UIViewController<FastttCameraDelegate, UITextFieldDelegate>
 
 - (instancetype)initPreload;
 
