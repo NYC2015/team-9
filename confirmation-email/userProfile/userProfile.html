@@ -8,14 +8,18 @@
     <meta name="author" content="Team 9">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Thank you for subscribing to Rock The Earth newsletter!</title>
+    <title>User Profile</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    
+      
+    <!-- Javascript for parse -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+    <script src="test.js"></script>
       
     <style>
     
@@ -27,10 +31,12 @@
             text-align: center;
         }
         
-        .jumbotron {
-            height:auto;
+        .images {
+            padding-left: 100px;
+            padding-right: 100px;
+            width: 100%;
+            height: auto;
         }
-      
     </style>
   </head>
 
@@ -51,38 +57,33 @@
     -->
 
       <div class="jumbotron">
-        <h1>Thank You for supporting</h1>
-        <div class = 'col-md-8'>
-            <img src = '../photos/RockTheEarthLogo.png' class = 'images'>
+        <!-- User Profile Image Here -->
+        <h1>Basil Vetas</h1>
+        <img id = 'profilePic' src = '../../photos/basil.jpg' class = 'images'>
+        
+        <!-- No need for buttons yet
+        <div class = "col-md-4 text-center">
+            <p><a class="btn btn-lg btn-success" href="#" role="button">Make a difference today. Donate to our campaign</a></p>
         </div>
-        <div class = "col-md-8 col-sm-10 text-center">
-            <p style = 'text-align:center;'><a class="btn btn-lg btn-success" href="#" role="button">Visit our campaign page here</a></p>
-        </div>
-      </div>
-
-      <div class="row marketing">
+        -->
           
-    <!-- Social Media icons don't work
-
-        <h4>Share this on your social media</h4>
-        <div class="row">
-            <div class="col-md-2 col-md-offset-1">
-                <img src="../photos/icons/facebook.png">
-            </div>
-            <div class="col-md-2">
-                <img src="../photos/icons/twitter.png">
-            </div>
-            <div class="col-md-2">
-                <img src="../photos/icons/tumblr.png">
-            </div>
-            <div class="col-md-2">
-                <img src="../photos/icons/googlePlus.png">
-            </div>
-            <div class="col-md-2">
-                <img src="../photos/icons/forwardMail.png">
-            </div>
-        </div>
-    -->
+      </div>
+       <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Campaign</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+    </tr>
+    </tbody>
+  </table>
+        
               
 <!-- Don't need footer for right now?
       <footer class="footer">
@@ -92,6 +93,6 @@
     </div> <!-- /container -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
   </body>
 </html>
