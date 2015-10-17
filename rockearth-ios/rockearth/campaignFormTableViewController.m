@@ -47,6 +47,8 @@
     UIBarButtonItem* bye = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonSystemItemCancel target:self action:@selector(done)];
     self.navigationItem.leftBarButtonItem = bye;
 
+    [self.navigationItem setTitle:self.campaign[@"name"]];
+
     
     UIImageView* image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yosemite.jpg"]];
     if (self.image) {

@@ -19,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self.navigationItem setTitle:@"Campaign Notes"];
+    
     UIBarButtonItem* bye = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonSystemItemCancel target:self action:@selector(done)];
     self.navigationItem.leftBarButtonItem = bye;
 

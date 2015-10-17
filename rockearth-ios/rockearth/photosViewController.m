@@ -32,6 +32,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     
+    [self.navigationItem setTitle:@"Photoshop"];
+    
     UIBarButtonItem* bye = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonSystemItemCancel target:self action:@selector(done)];
     self.navigationItem.leftBarButtonItem = bye;
     [super viewDidLoad];
