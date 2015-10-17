@@ -79,7 +79,7 @@
     name = [UITextField new];
     [name setDelegate:self];
     name.translatesAutoresizingMaskIntoConstraints = NO;
-    name.backgroundColor = [UIColor lightGrayColor];
+    name.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
     name.layer.cornerRadius = 10;
     UILabel* nameL = [UILabel new];
     nameL.translatesAutoresizingMaskIntoConstraints = NO;
@@ -162,7 +162,7 @@
     email = [UITextField new];
     [email setDelegate:self];
     email.translatesAutoresizingMaskIntoConstraints = NO;
-    email.backgroundColor = [UIColor lightGrayColor];
+    email.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
     email.layer.cornerRadius = 10;
     UILabel* emailL = [UILabel new];
     emailL.translatesAutoresizingMaskIntoConstraints = NO;
@@ -175,7 +175,7 @@
     zipcode = [UITextField new];
     [zipcode setDelegate:self];
     zipcode.translatesAutoresizingMaskIntoConstraints = NO;
-    zipcode.backgroundColor = [UIColor lightGrayColor];
+    zipcode.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
     zipcode.layer.cornerRadius = 10;
     UILabel* zipcodeL = [UILabel new];
     zipcodeL.translatesAutoresizingMaskIntoConstraints = NO;
