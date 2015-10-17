@@ -31,15 +31,8 @@ static NSString* cellID = @"campaignCell";
     self.campaigns = [[NSMutableArray alloc] init];
     self.campaignImages = [[NSMutableArray alloc] init];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [[locationSingleton sharedLocation] findLocaton];
     [locationSingleton sharedLocation].cDelegate = self;
-
-    
     
 }
 
@@ -129,18 +122,15 @@ static NSString* cellID = @"campaignCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-//    PFObject* dataSourceItem = ((PFObject*)[self.campaigns objectAtIndex:indexPath.row]);
-//    PFFile* image = dataSourceItem[@"backgroundImage"];
-//    [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-//        campaignHomepageTableViewController* homepage = [[campaignHomepageTableViewController alloc] init];
-//        [self presentViewController:homepage animated:YES completion:^{
-//            
-//        }];
-//    }];
+    PFObject* dataSourceItem = ((PFObject*)[self.campaigns objectAtIndex:indexPath.row]);
+    PFFile* image = dataSourceItem[@"backgroundImage"];
+    [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        campaignFormTableViewController* homepage = [[campaignFormTableViewController alloc] initWithImage:[UIImage imageWithData:data]];
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:homepage];
+        [self presentViewController:nav animated:YES completion:nil];
+    }];
     
-    campaignFormTableViewController* homepage = [[campaignFormTableViewController alloc] init];
     
-    [self presentViewController:homepage animated:YES completion:nil];
 
     
 //    campaignFormViewController* form = [[campaignFormViewController alloc] init];

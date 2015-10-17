@@ -31,6 +31,15 @@
 		E46DA7C21BD21DCF00A3C2F7 /* yosemite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7C11BD21DCF00A3C2F7 /* yosemite.jpg */; settings = {ASSET_TAGS = (); }; };
 		E46DA7C41BD21E3800A3C2F7 /* rlly.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7C31BD21E3800A3C2F7 /* rlly.png */; settings = {ASSET_TAGS = (); }; };
 		E46DA7C71BD220B500A3C2F7 /* campaignFormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DA7C61BD220B500A3C2F7 /* campaignFormTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E46DA7CF1BD229B100A3C2F7 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7CC1BD229B100A3C2F7 /* 1.png */; settings = {ASSET_TAGS = (); }; };
+		E46DA7D01BD229B100A3C2F7 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7CD1BD229B100A3C2F7 /* map.png */; settings = {ASSET_TAGS = (); }; };
+		E46DA7D21BD229E900A3C2F7 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7D11BD229E900A3C2F7 /* 2.png */; settings = {ASSET_TAGS = (); }; };
+		E46DA7D61BD22A3600A3C2F7 /* campaignOptionsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DA7D41BD22A3600A3C2F7 /* campaignOptionsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		E46DA7D71BD22A3600A3C2F7 /* campaignOptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7D51BD22A3600A3C2F7 /* campaignOptionsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		E46DA7D91BD22DA700A3C2F7 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7D81BD22DA700A3C2F7 /* 0.png */; settings = {ASSET_TAGS = (); }; };
+		E46DA7DB1BD2409300A3C2F7 /* cancel30.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7DA1BD2409300A3C2F7 /* cancel30.png */; settings = {ASSET_TAGS = (); }; };
+		E46DA7E51BD2468F00A3C2F7 /* cameraOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DA7E31BD2468F00A3C2F7 /* cameraOptionsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E46DA7E61BD2468F00A3C2F7 /* cameraOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7E41BD2468F00A3C2F7 /* cameraOptionsViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +103,17 @@
 		E46DA7C31BD21E3800A3C2F7 /* rlly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rlly.png; sourceTree = "<group>"; };
 		E46DA7C51BD220B500A3C2F7 /* campaignFormTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = campaignFormTableViewController.h; sourceTree = "<group>"; };
 		E46DA7C61BD220B500A3C2F7 /* campaignFormTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campaignFormTableViewController.m; sourceTree = "<group>"; };
+		E46DA7CC1BD229B100A3C2F7 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		E46DA7CD1BD229B100A3C2F7 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		E46DA7D11BD229E900A3C2F7 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		E46DA7D31BD22A3600A3C2F7 /* campaignOptionsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = campaignOptionsTableViewCell.h; sourceTree = "<group>"; };
+		E46DA7D41BD22A3600A3C2F7 /* campaignOptionsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = campaignOptionsTableViewCell.m; sourceTree = "<group>"; };
+		E46DA7D51BD22A3600A3C2F7 /* campaignOptionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = campaignOptionsTableViewCell.xib; sourceTree = "<group>"; };
+		E46DA7D81BD22DA700A3C2F7 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		E46DA7DA1BD2409300A3C2F7 /* cancel30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel30.png; sourceTree = "<group>"; };
+		E46DA7E21BD2468F00A3C2F7 /* cameraOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraOptionsViewController.h; sourceTree = "<group>"; };
+		E46DA7E31BD2468F00A3C2F7 /* cameraOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraOptionsViewController.m; sourceTree = "<group>"; };
+		E46DA7E41BD2468F00A3C2F7 /* cameraOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cameraOptionsViewController.xib; sourceTree = "<group>"; };
 		FC705D1FF560DEC2407AD694 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -176,8 +196,14 @@
 				E46594E81BD1D6C7009C000E /* campaignTableViewController.m */,
 				E46DA7C51BD220B500A3C2F7 /* campaignFormTableViewController.h */,
 				E46DA7C61BD220B500A3C2F7 /* campaignFormTableViewController.m */,
+				E46DA7D31BD22A3600A3C2F7 /* campaignOptionsTableViewCell.h */,
+				E46DA7D41BD22A3600A3C2F7 /* campaignOptionsTableViewCell.m */,
+				E46DA7D51BD22A3600A3C2F7 /* campaignOptionsTableViewCell.xib */,
 				E46DA79F1BD20AF800A3C2F7 /* campaignFormViewController.h */,
 				E46DA7A01BD20AF800A3C2F7 /* campaignFormViewController.m */,
+				E46DA7E21BD2468F00A3C2F7 /* cameraOptionsViewController.h */,
+				E46DA7E31BD2468F00A3C2F7 /* cameraOptionsViewController.m */,
+				E46DA7E41BD2468F00A3C2F7 /* cameraOptionsViewController.xib */,
 				E46DA7B01BD2116D00A3C2F7 /* CampaignOptionCollectionViewCell.h */,
 				E46DA7B11BD2116D00A3C2F7 /* CampaignOptionCollectionViewCell.m */,
 				E46DA7AD1BD2115300A3C2F7 /* EventCollectionViewCell.h */,
@@ -194,6 +220,11 @@
 				E46DA79A1BD2016400A3C2F7 /* overlay.png */,
 				E46DA7C11BD21DCF00A3C2F7 /* yosemite.jpg */,
 				E46DA7C31BD21E3800A3C2F7 /* rlly.png */,
+				E46DA7CC1BD229B100A3C2F7 /* 1.png */,
+				E46DA7D11BD229E900A3C2F7 /* 2.png */,
+				E46DA7D81BD22DA700A3C2F7 /* 0.png */,
+				E46DA7CD1BD229B100A3C2F7 /* map.png */,
+				E46DA7DA1BD2409300A3C2F7 /* cancel30.png */,
 				E40C89D41BD1C0CD00686908 /* Main.storyboard */,
 				E40C89D71BD1C0CD00686908 /* Assets.xcassets */,
 				E40C89D91BD1C0CD00686908 /* LaunchScreen.storyboard */,
@@ -334,11 +365,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46DA7D91BD22DA700A3C2F7 /* 0.png in Resources */,
 				E46DA79B1BD2016400A3C2F7 /* overlay.png in Resources */,
+				E46DA7D71BD22A3600A3C2F7 /* campaignOptionsTableViewCell.xib in Resources */,
+				E46DA7D21BD229E900A3C2F7 /* 2.png in Resources */,
 				E40C89DB1BD1C0CD00686908 /* LaunchScreen.storyboard in Resources */,
 				E40C89D81BD1C0CD00686908 /* Assets.xcassets in Resources */,
+				E46DA7D01BD229B100A3C2F7 /* map.png in Resources */,
 				E46DA7C21BD21DCF00A3C2F7 /* yosemite.jpg in Resources */,
+				E46DA7CF1BD229B100A3C2F7 /* 1.png in Resources */,
 				E46DA7C41BD21E3800A3C2F7 /* rlly.png in Resources */,
+				E46DA7E61BD2468F00A3C2F7 /* cameraOptionsViewController.xib in Resources */,
+				E46DA7DB1BD2409300A3C2F7 /* cancel30.png in Resources */,
 				E46594EE1BD1D827009C000E /* location.png in Resources */,
 				E46594F01BD1D88C009C000E /* fallout.jpg in Resources */,
 				E40C89D61BD1C0CD00686908 /* Main.storyboard in Resources */,
@@ -401,6 +439,8 @@
 			files = (
 				E46DA7C71BD220B500A3C2F7 /* campaignFormTableViewController.m in Sources */,
 				E46594E61BD1D0DD009C000E /* loginViewController.m in Sources */,
+				E46DA7E51BD2468F00A3C2F7 /* cameraOptionsViewController.m in Sources */,
+				E46DA7D61BD22A3600A3C2F7 /* campaignOptionsTableViewCell.m in Sources */,
 				E46594EC1BD1D731009C000E /* CampaignTableViewCell.m in Sources */,
 				E46DA7A21BD20AF800A3C2F7 /* campaignFormViewController.m in Sources */,
 				E40C89D31BD1C0CD00686908 /* ViewController.m in Sources */,

@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <VGParallaxHeader/UIScrollView+VGParallaxHeader.h>
+#import "campaignOptionsTableViewCell.h"
+#import "campaignFormViewController.h"
 
 @interface campaignFormTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray* options;
+
+- (instancetype)initWithImage:(UIImage*)image;
 
 @end

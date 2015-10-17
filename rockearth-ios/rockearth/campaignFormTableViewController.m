@@ -8,7 +8,12 @@
 
 #import "campaignFormTableViewController.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
 @interface campaignFormTableViewController ()
+
+@property (nonatomic, strong) UIImage* image;
 
 @end
 
@@ -22,19 +27,35 @@
     return self;
 }
 
+- (instancetype)initWithImage:(UIImage*)image{
+    self = [super initWithStyle:UITableViewStylePlain];
+    self.image = image;
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImageView* image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yosemite.jpg"]];
+    UIBarButtonItem* bye = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonSystemItemCancel target:self action:@selector(done)];
+    self.navigationItem.leftBarButtonItem = bye;
+
     
-    [self.tableView setParallaxHeaderView:image
-                                      mode:VGParallaxHeaderModeFill // For more modes have a look in UIScrollView+VGParallaxHeader.h
-                                    height:200];
+    UIImageView* image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yosemite.jpg"]];
+    if (self.image) {
+        [self.tableView setParallaxHeaderView:[[UIImageView alloc] initWithImage:self.image]
+                                         mode:VGParallaxHeaderModeCenter // For more modes have a look in UIScrollView+VGParallaxHeader.h
+                                       height:self.view.frame.size.height*.35];
+    } else {
+        [self.tableView setParallaxHeaderView:image
+                                         mode:VGParallaxHeaderModeCenter // For more modes have a look in UIScrollView+VGParallaxHeader.h
+                                       height:self.view.frame.size.height*.35];
+    }
 
 //    [self.tableView.parallaxHeader set];
     
     self.tableView.parallaxHeader.stickyViewPosition = VGParallaxHeaderStickyViewPositionBottom; // VGParallaxHeaderStickyViewPositionTop
-
+    
+    [self.tableView registerClass:[campaignOptionsTableViewCell class] forCellReuseIdentifier:@"thingthing"];
     
     self.options = [NSMutableArray new];
     
@@ -45,7 +66,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.options = [@[@"1", @"2", @"3", @"4"] mutableCopy];
+    self.options = [@[@"1", @"2", @"3"] mutableCopy];
     
 }
 
@@ -81,19 +102,36 @@
     [scrollView.parallaxHeader.stickyView setAlpha:scrollView.parallaxHeader.progress];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return ((self.view.frame.size.width/16)*9) - 60;
+}
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"otherCell"];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    campaignOptionsTableViewCell *cell = [[campaignOptionsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"thingthing"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"otherCell"];
+        cell = [[campaignOptionsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"thingthing"];
     }
     
+    [cell.image setImage:[[UIImage imageNamed:[NSString stringWithFormat:@"%ld", (long)indexPath.row]] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    NSArray* colors = @[[UIColor purpleColor], UIColorFromRGB(0x10F7F0),
+                        [[UIColor redColor] colorWithAlphaComponent:0.60], [UIColor redColor]];
+    [cell.image setTintColor:[colors objectAtIndex:indexPath.row]];
+    
+    NSArray* text = @[@"Sign Petition", @"Campaign Photos", @"Campaign Info"];
+    [cell.label setText:[text objectAtIndex:indexPath.row]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    campaignFormViewController* form = [[campaignFormViewController alloc] initPreload];
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:form];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+
+- (void)done{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

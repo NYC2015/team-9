@@ -66,6 +66,7 @@ PODS:
   - SpinKit (1.2.0)
   - VGParallaxHeader (0.0.6):
     - PureLayout
+  - ZFCheckbox (0.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -86,6 +87,7 @@ DEPENDENCIES:
   - socket.IO
   - SpinKit (~> 1.2)
   - VGParallaxHeader
+  - ZFCheckbox (~> 0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
@@ -109,5 +111,6 @@ SPEC CHECKSUMS:
   SocketRocket: ee0b5c34182d37bb4f1f8d628bbe737718126daa
   SpinKit: 65906a8b534a4e14cbfd3f8b0b6c329131faef4a
   VGParallaxHeader: 1213aba58c9b0aea84f9e81ad526fde57aa4fe48
+  ZFCheckbox: c3429f83d64f3ba566d9aa8fd45245baf9733e54
 
 COCOAPODS: 0.38.2

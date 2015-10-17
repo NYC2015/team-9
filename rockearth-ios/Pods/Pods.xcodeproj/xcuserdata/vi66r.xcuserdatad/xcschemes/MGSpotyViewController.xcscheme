@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7B2F5C1284AA11C3F4C8ED24"
+               BlueprintIdentifier = "5E01B8C6C50E37B04483F10B"
                BuildableName = "libMGSpotyViewController.a"
                BlueprintName = "MGSpotyViewController"
                ReferencedContainer = "container:Pods.xcodeproj">
