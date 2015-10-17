@@ -41,7 +41,7 @@ h2 {
 /*	margin: 0 100px;*/
 }
 
-#support {
+#support {	
 	/*padding: 0 80px;	*/
 }
 
@@ -61,9 +61,10 @@ h2 {
 	
 }
 
-#profiles {
-	/*padding: 40px;*/	
+.profile {
+	margin-bottom: 100px;	
 }
+
 nav {
 	
 }
