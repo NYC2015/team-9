@@ -13,19 +13,26 @@ var rockEarthApp = angular.module('rockEarthApp', []);
 
 rockEarthApp.controller('MainController', ['$scope', function($scope) {
 	$scope.name = "Close Indian Point Nuclear Plant Now";
-	$scope.count = 8;
+	$scope.number = 8;
+	$scope.count = 1234;
 
 	// $scope.objects = {}; // make http request for objects
 }]);
 
-$(window).resize(function() {
-  var docWidth = $(document).width();
-  console.log(docWidth);	
-	var titleWidth = $('#title').width();
-	console.log(titleWidth);	
-	var newWidth = (docWidth / 2) - (titleWidth/2);
-	$('#title').css("left",newWidth);	
-});
+// $(window).resize(function() {
+//   var docWidth = $(document).width();
+//   console.log(docWidth);	
+// 	var titleWidth = $('#title').width();
+// 	console.log(titleWidth);	
+// 	var newWidth = (docWidth / 2) - (titleWidth/2);
+// 	$('#title').css("left",newWidth);	
+// });
+
+// $(window).load(function() {
+	
+// });
+
+
 
 
 

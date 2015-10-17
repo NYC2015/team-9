@@ -4,6 +4,16 @@
     <meta charset="utf-8">
 
     <title>Rock the Earth</title>
+
+    <!-- Open Graph Markup for Facebook sharing -->
+    <!-- <meta property="og:url" content="#" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Rock the Earth" />
+    <meta property="og:description" content="#" />
+    <meta property="og:image" content="" /> -->
+
+
+
     <meta name="description" content="Rock the Earth">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/normalize.css">
@@ -17,22 +27,37 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>
     <script src="scripts/main.js"></script>
 
+
+
     
   </head>
 
   <body ng-controller="MainController">
 
-    <div ng-include="'partials/_nav.html'"></div>    
-
-    <div ng-include="'partials/_grid.html'"></div>
-    
-    <div id="main">
-
-      
-
-      
+    <div class="row">
+      <div ng-include="'partials/_nav.html'"></div>   
     </div>
-    
+    <div class="row">
+      <div id="photo-grid" ng-include="'partials/_grid.html'"></div>
+      <h1 id="title" class="text-center">{{ name }}</h1>
+    </div>
+
+    <div class="container">    
+      <div id="main" class="row">
+        <div id="left"  class="col-lg-8">
+          <div id="support" ng-include="'partials/_support.html'"></div>  
+          <div ng-include="'partials/_main-img.html'"></div>  
+          <div id="info" ng-include="'partials/_info.html'"></div>
+        </div>
+
+        <div id="right"  class="col-lg-4">
+          <div id="profiles" ng-include="'partials/_profiles.html'"></div>  
+        </div>
+        
+        <div class="clear"></div>
+      </div>
+    </div>
+ 
   </body>
 
 

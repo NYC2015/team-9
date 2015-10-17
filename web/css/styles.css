@@ -1,16 +1,110 @@
+body {
+	font-style: Lato, Serif, sans-serif;
+}
+
+.main {
+	width: 100%;
+	height: auto;
+	margin: 40px 0;
+	border-radius: 3%;
+}
+
+button.support {
+	/*font-size: 30px;*/
+	/*padding: 10px 20px;*/
+}
+
+input {
+    padding: .5rem;
+    margin: 20px !important;
+}
+
+/*.header {
+	display: inline-block;
+}
+*/
+.prof {
+	/*border-radius: 40%;*/
+	-webkit-filter: grayscale(100%);
+}
+
+h2 {
+	text-align: center;
+}
+
+#main {
+	margin: 10% 0;
+}
+
+.supporters {
+	/*font-size: 40px !important;*/
+/*	margin: 0 100px;*/
+}
+
+#support {
+	/*padding: 0 80px;	*/
+}
+
+#left {
+	/*width: 60%;*/
+	/*padding: 0 0 0 100px;	*/
+}
+
+#right {
+	/*width: 40%;	*/
+	text-align: center;
+}
+
+#info {
+	/*margin: 20px 0;*/
+	font-size: 20px;
+	
+}
+
+#profiles {
+	/*padding: 40px;*/	
+}
 nav {
 	
 }
 
+#login {
+	margin: 2rem 4rem;
+}
+
+@media (max-width: 768px) {
+  .btn-responsive {
+    padding:2px 4px;
+    font-size:60%;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .btn-responsive {
+    padding:4px 9px;
+    font-size:70%;
+    line-height: 1.2;
+  }
+}
+
 #brand {
-	width: 8%;
-	height: auto;
-	font-size: 50px;
-	margin: 2rem;
+	/*width: 8%;*/
+	height: 50px;
+	margin: 2rem 4rem;
+}
+
+#title {
+	margin: 15% 0;
+	font-size: 5em;
 }
 
 .left {
 	float: left;
+}
+
+.right {
+	float: right;
 }
 
 .clear {
@@ -18,8 +112,7 @@ nav {
 }
 
 h1 {
-	position: absolute;
-	top: 35%;
+	top: 50%;
 }
 
 #photo-grid {
@@ -32,6 +125,9 @@ h1 {
   -moz-column-gap:      0px;
   column-count:         5;
   column-gap:           0px;  
+
+  margin-bottom: 10rem;
+  position: absolute;
 }
 
 #photo-grid img {
@@ -39,9 +135,23 @@ h1 {
   width: 100% !important;
   height: auto !important;
   opacity: 0.4;
-  filter: alpha(opacity=40); /* For IE8 and earlier */
+  filter: alpha(opacity=40); /* For IE8 and earlier */  
 }
 
+@media (max-width: 800px) {
+  #title {
+  	font-size: 3em;
+  }
+}
+
+@media (max-width: 400px) {
+  #title {
+  	font-size: 1.5em;
+  }
+}
+
+
+/*
 @media (max-width: 1200px) {
   #photo-grid {
   -moz-column-count:    4;
@@ -69,4 +179,4 @@ h1 {
   -webkit-column-count: 1;
   column-count:         1;
   }
-}
+}*/
