@@ -1,12 +1,6 @@
 'use strict';
 Parse.initialize("8Zmxhf0z8gYpTzVPOIThIULbEo04hX3NT7bFvRx1", "l0ctJ43ZGTh9GqErJqAweKSF29zNzOBMUK6LfdRJ");
 
-// var TestObject = Parse.Object.extend("TestObject");
-// var testObject = new TestObject();
-// testObject.save({foo: "bar"}).then(function(object) {
-// alert("yay! it worked");
-// });
-
 /* Controllers */
 
 var rockEarthApp = angular.module('rockEarthApp', []);
@@ -18,64 +12,36 @@ rockEarthApp.controller('MainController', ['$scope', function($scope) {
 	var data = [];
 	var myResults;
 
-	var TestObject = Parse.Object.extend("pictureTest");
+	var TestObject = Parse.Object.extend("signees");
 	var query = new Parse.Query(TestObject);
 
-	query.equalTo("campaign", "water");
+	query.equalTo("campaignID", "eAtTvEfnEK");
 	query.find({
 	  success: function(results) {	  	
+	    
+	    for (var i = 0; i < 10; i++) {
+	      var object = results[results.length - i - 1];	      
+	      var imageFile = object.get('picture');
 
-	  	// console.log(results);
-	    // alert("Successfully retrieved " + results.length + " scores.");
-	    // Do something with the returned Parse.Object values
-	    for (var i = 0; i < $scope.number; i++) {
-	      var object = results[i];
-	      // alert(object.id + ' - ' + object.get('objectId'));
-
-	      var imageFile = object.get('testPictures');
-
-	      var imgId = 'img' + i.toString();
-	      // console.log(imgId);
-	      // document.getElementById(imgId).src 
-	      document.getElementById(imgId).src = imageFile.url();	      
-	      // console.log(data);		      
+	      var imgId = 'img' + i.toString();	      
+	      document.getElementById(imgId).src = imageFile.url();	      	      
 	    }
 
-	    // $scope.$apply(function(results)
-	    // {
-	    // 	$scope.objects = results.map(function(obj)
-	    // 	{
-	    // 		return {url: obj.get('testPictures'),
-	    // 		parseObject: obj};
-	    // 	});
+	    for (var i = 0; i < 4; i++) {
+	      var object = results[results.length - i - 1];	     
 
-	    // });
+	      var imageFile = object.get('picture');
 
-	    // $scope.objects = data;	    
-	    // console.log($scope.objects);
-
-
+	      document.getElementById('prof' + i.toString()).src = imageFile.url();	      
+	      document.getElementById('name' + i.toString()).innerHTML = object.get('name');	      
+	      document.getElementById('city' + i.toString()).innerHTML = object.get('locationName');	      
+	    }
 	  },
 	  error: function(error) {
 	    alert("Error: " + error.code + " " + error.message);
 	  }
-	});
-
-	// $scope.objects = {}; // make http request for objects
+	});	
 }]);
-
-// $(window).resize(function() {
-//   var docWidth = $(document).width();
-//   console.log(docWidth);	
-// 	var titleWidth = $('#title').width();
-// 	console.log(titleWidth);	
-// 	var newWidth = (docWidth / 2) - (titleWidth/2);
-// 	$('#title').css("left",newWidth);	
-// });
-
-// $(window).load(function() {
-
-// });
 
 
 
