@@ -1,3 +1,27 @@
+nav {
+	
+}
+
+#brand {
+	width: 8%;
+	height: auto;
+	font-size: 50px;
+	margin: 2rem;
+}
+
+.left {
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+h1 {
+	position: absolute;
+	top: 35%;
+}
+
 #photo-grid {
   /* Prevent vertical gaps */
   line-height: 0;
@@ -14,6 +38,8 @@
   /* Just in case there are inline attributes */
   width: 100% !important;
   height: auto !important;
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* For IE8 and earlier */
 }
 
 @media (max-width: 1200px) {

@@ -5,7 +5,8 @@
 
     <title>Rock the Earth</title>
     <meta name="description" content="Rock the Earth">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -21,7 +22,7 @@
 
   <body ng-controller="MainController">
 
-    
+    <div ng-include="'partials/_nav.html'"></div>    
 
     <div ng-include="'partials/_grid.html'"></div>
     
@@ -34,4 +35,9 @@
     
   </body>
 
+
 </html>
+
+
+
+

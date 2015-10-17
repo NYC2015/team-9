@@ -11,18 +11,24 @@ Parse.initialize("h840VqB3Hj6oaiccjPXFrlj86jwu1ecCmv0N8pc4", "mupd3jOW4P0UdkQScP
 
 var rockEarthApp = angular.module('rockEarthApp', []);
 
-rockEarthApp.controller('MainController', function($scope) {
+rockEarthApp.controller('MainController', ['$scope', function($scope) {
+	$scope.name = "Close Indian Point Nuclear Plant Now";
+	$scope.count = 8;
+
 	// $scope.objects = {}; // make http request for objects
+}]);
+
+$(window).resize(function() {
+  var docWidth = $(document).width();
+  console.log(docWidth);	
+	var titleWidth = $('#title').width();
+	console.log(titleWidth);	
+	var newWidth = (docWidth / 2) - (titleWidth/2);
+	$('#title').css("left",newWidth);	
 });
 
-function getRandomSize(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
 
-for (var i = 0; i < 8; i++) {
-	console.log("GOt here");
-  var width = getRandomSize(200, 400);
-  var height =  getRandomSize(200, 400);
-  $('#photo-grid').append('<img src="http://www.lorempixel.com/'+width+'/'+height+'/cats" alt="pretty kitty">');
-}
+
+
+
 
