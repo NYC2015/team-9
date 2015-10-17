@@ -125,7 +125,7 @@ static NSString* cellID = @"campaignCell";
     PFObject* dataSourceItem = ((PFObject*)[self.campaigns objectAtIndex:indexPath.row]);
     PFFile* image = dataSourceItem[@"backgroundImage"];
     [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-        campaignFormTableViewController* homepage = [[campaignFormTableViewController alloc] initWithImage:[UIImage imageWithData:data]];
+        campaignFormTableViewController* homepage = [[campaignFormTableViewController alloc] initWithImage:[UIImage imageWithData:data] andCampaign:dataSourceItem];
         UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:homepage];
         [self presentViewController:nav animated:YES completion:nil];
     }];

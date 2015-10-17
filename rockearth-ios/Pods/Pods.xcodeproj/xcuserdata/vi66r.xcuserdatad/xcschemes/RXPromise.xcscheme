@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FFFF5AC27BDC6735442C0CFE"
+               BlueprintIdentifier = "947160D27ACCE39D2FF55185"
                BuildableName = "libRXPromise.a"
                BlueprintName = "RXPromise"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -40,6 +40,14 @@
 		E46DA7DB1BD2409300A3C2F7 /* cancel30.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7DA1BD2409300A3C2F7 /* cancel30.png */; settings = {ASSET_TAGS = (); }; };
 		E46DA7E51BD2468F00A3C2F7 /* cameraOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DA7E31BD2468F00A3C2F7 /* cameraOptionsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E46DA7E61BD2468F00A3C2F7 /* cameraOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7E41BD2468F00A3C2F7 /* cameraOptionsViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		E46DA7E81BD258F000A3C2F7 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DA7E71BD258F000A3C2F7 /* check.png */; settings = {ASSET_TAGS = (); }; };
+		E46DA7EB1BD26A2A00A3C2F7 /* HWViewPager.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DA7EA1BD26A2A00A3C2F7 /* HWViewPager.m */; settings = {ASSET_TAGS = (); }; };
+		E497DF931BD2796E00CCD518 /* photoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E497DF911BD2796E00CCD518 /* photoCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		E497DF991BD27ED000CCD518 /* photosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E497DF981BD27ED000CCD518 /* photosViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E497DF9B1BD2895C00CCD518 /* usor.png in Resources */ = {isa = PBXBuildFile; fileRef = E497DF9A1BD2895C00CCD518 /* usor.png */; settings = {ASSET_TAGS = (); }; };
+		E497DF9F1BD2936E00CCD518 /* detailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E497DF9D1BD2936E00CCD518 /* detailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E497DFA01BD2936E00CCD518 /* detailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E497DF9E1BD2936E00CCD518 /* detailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		E497DFA21BD297A400CCD518 /* flip.png in Resources */ = {isa = PBXBuildFile; fileRef = E497DFA11BD297A400CCD518 /* flip.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +122,18 @@
 		E46DA7E21BD2468F00A3C2F7 /* cameraOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraOptionsViewController.h; sourceTree = "<group>"; };
 		E46DA7E31BD2468F00A3C2F7 /* cameraOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraOptionsViewController.m; sourceTree = "<group>"; };
 		E46DA7E41BD2468F00A3C2F7 /* cameraOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cameraOptionsViewController.xib; sourceTree = "<group>"; };
+		E46DA7E71BD258F000A3C2F7 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		E46DA7E91BD26A2100A3C2F7 /* HWViewPager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWViewPager.h; sourceTree = "<group>"; };
+		E46DA7EA1BD26A2A00A3C2F7 /* HWViewPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewPager.m; sourceTree = "<group>"; };
+		E497DF901BD2796E00CCD518 /* photoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoCollectionViewCell.h; sourceTree = "<group>"; };
+		E497DF911BD2796E00CCD518 /* photoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoCollectionViewCell.m; sourceTree = "<group>"; };
+		E497DF971BD27ED000CCD518 /* photosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photosViewController.h; sourceTree = "<group>"; };
+		E497DF981BD27ED000CCD518 /* photosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photosViewController.m; sourceTree = "<group>"; };
+		E497DF9A1BD2895C00CCD518 /* usor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usor.png; sourceTree = "<group>"; };
+		E497DF9C1BD2936E00CCD518 /* detailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailViewController.h; sourceTree = "<group>"; };
+		E497DF9D1BD2936E00CCD518 /* detailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailViewController.m; sourceTree = "<group>"; };
+		E497DF9E1BD2936E00CCD518 /* detailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = detailViewController.xib; sourceTree = "<group>"; };
+		E497DFA11BD297A400CCD518 /* flip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flip.png; sourceTree = "<group>"; };
 		FC705D1FF560DEC2407AD694 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -196,11 +216,18 @@
 				E46594E81BD1D6C7009C000E /* campaignTableViewController.m */,
 				E46DA7C51BD220B500A3C2F7 /* campaignFormTableViewController.h */,
 				E46DA7C61BD220B500A3C2F7 /* campaignFormTableViewController.m */,
+				E497DF971BD27ED000CCD518 /* photosViewController.h */,
+				E497DF981BD27ED000CCD518 /* photosViewController.m */,
+				E497DF901BD2796E00CCD518 /* photoCollectionViewCell.h */,
+				E497DF911BD2796E00CCD518 /* photoCollectionViewCell.m */,
 				E46DA7D31BD22A3600A3C2F7 /* campaignOptionsTableViewCell.h */,
 				E46DA7D41BD22A3600A3C2F7 /* campaignOptionsTableViewCell.m */,
 				E46DA7D51BD22A3600A3C2F7 /* campaignOptionsTableViewCell.xib */,
 				E46DA79F1BD20AF800A3C2F7 /* campaignFormViewController.h */,
 				E46DA7A01BD20AF800A3C2F7 /* campaignFormViewController.m */,
+				E497DF9C1BD2936E00CCD518 /* detailViewController.h */,
+				E497DF9D1BD2936E00CCD518 /* detailViewController.m */,
+				E497DF9E1BD2936E00CCD518 /* detailViewController.xib */,
 				E46DA7E21BD2468F00A3C2F7 /* cameraOptionsViewController.h */,
 				E46DA7E31BD2468F00A3C2F7 /* cameraOptionsViewController.m */,
 				E46DA7E41BD2468F00A3C2F7 /* cameraOptionsViewController.xib */,
@@ -216,8 +243,12 @@
 				E46DA7B91BD21B0A00A3C2F7 /* UIImage+ImageEffects.m */,
 				E46594F11BD1E3D8009C000E /* locationSingleton.h */,
 				E46594F21BD1E3D8009C000E /* locationSingleton.m */,
+				E46DA7E91BD26A2100A3C2F7 /* HWViewPager.h */,
+				E46DA7EA1BD26A2A00A3C2F7 /* HWViewPager.m */,
+				E497DF9A1BD2895C00CCD518 /* usor.png */,
 				E46594EF1BD1D88C009C000E /* fallout.jpg */,
 				E46DA79A1BD2016400A3C2F7 /* overlay.png */,
+				E497DFA11BD297A400CCD518 /* flip.png */,
 				E46DA7C11BD21DCF00A3C2F7 /* yosemite.jpg */,
 				E46DA7C31BD21E3800A3C2F7 /* rlly.png */,
 				E46DA7CC1BD229B100A3C2F7 /* 1.png */,
@@ -225,6 +256,7 @@
 				E46DA7D81BD22DA700A3C2F7 /* 0.png */,
 				E46DA7CD1BD229B100A3C2F7 /* map.png */,
 				E46DA7DA1BD2409300A3C2F7 /* cancel30.png */,
+				E46DA7E71BD258F000A3C2F7 /* check.png */,
 				E40C89D41BD1C0CD00686908 /* Main.storyboard */,
 				E40C89D71BD1C0CD00686908 /* Assets.xcassets */,
 				E40C89D91BD1C0CD00686908 /* LaunchScreen.storyboard */,
@@ -368,10 +400,14 @@
 				E46DA7D91BD22DA700A3C2F7 /* 0.png in Resources */,
 				E46DA79B1BD2016400A3C2F7 /* overlay.png in Resources */,
 				E46DA7D71BD22A3600A3C2F7 /* campaignOptionsTableViewCell.xib in Resources */,
+				E46DA7E81BD258F000A3C2F7 /* check.png in Resources */,
 				E46DA7D21BD229E900A3C2F7 /* 2.png in Resources */,
 				E40C89DB1BD1C0CD00686908 /* LaunchScreen.storyboard in Resources */,
 				E40C89D81BD1C0CD00686908 /* Assets.xcassets in Resources */,
+				E497DFA21BD297A400CCD518 /* flip.png in Resources */,
+				E497DF9B1BD2895C00CCD518 /* usor.png in Resources */,
 				E46DA7D01BD229B100A3C2F7 /* map.png in Resources */,
+				E497DFA01BD2936E00CCD518 /* detailViewController.xib in Resources */,
 				E46DA7C21BD21DCF00A3C2F7 /* yosemite.jpg in Resources */,
 				E46DA7CF1BD229B100A3C2F7 /* 1.png in Resources */,
 				E46DA7C41BD21E3800A3C2F7 /* rlly.png in Resources */,
@@ -437,14 +473,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E497DF991BD27ED000CCD518 /* photosViewController.m in Sources */,
 				E46DA7C71BD220B500A3C2F7 /* campaignFormTableViewController.m in Sources */,
+				E46DA7EB1BD26A2A00A3C2F7 /* HWViewPager.m in Sources */,
 				E46594E61BD1D0DD009C000E /* loginViewController.m in Sources */,
 				E46DA7E51BD2468F00A3C2F7 /* cameraOptionsViewController.m in Sources */,
+				E497DF9F1BD2936E00CCD518 /* detailViewController.m in Sources */,
 				E46DA7D61BD22A3600A3C2F7 /* campaignOptionsTableViewCell.m in Sources */,
 				E46594EC1BD1D731009C000E /* CampaignTableViewCell.m in Sources */,
 				E46DA7A21BD20AF800A3C2F7 /* campaignFormViewController.m in Sources */,
 				E40C89D31BD1C0CD00686908 /* ViewController.m in Sources */,
 				E46DA7AF1BD2115300A3C2F7 /* EventCollectionViewCell.m in Sources */,
+				E497DF931BD2796E00CCD518 /* photoCollectionViewCell.m in Sources */,
 				E46DA7B21BD2116D00A3C2F7 /* CampaignOptionCollectionViewCell.m in Sources */,
 				E46594E91BD1D6C7009C000E /* campaignTableViewController.m in Sources */,
 				E46594F31BD1E3D8009C000E /* locationSingleton.m in Sources */,

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8365FCEEA76CFEC86B8E8214"
+               BlueprintIdentifier = "2C14BCBC8F13005B5D4356FA"
                BuildableName = "libZFCheckbox.a"
                BlueprintName = "ZFCheckbox"
                ReferencedContainer = "container:Pods.xcodeproj">
