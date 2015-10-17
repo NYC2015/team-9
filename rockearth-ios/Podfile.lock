@@ -1,0 +1,107 @@
+PODS:
+  - AFNetworking (2.6.1):
+    - AFNetworking/NSURLConnection (= 2.6.1)
+    - AFNetworking/NSURLSession (= 2.6.1)
+    - AFNetworking/Reachability (= 2.6.1)
+    - AFNetworking/Security (= 2.6.1)
+    - AFNetworking/Serialization (= 2.6.1)
+    - AFNetworking/UIKit (= 2.6.1)
+  - AFNetworking/NSURLConnection (2.6.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.1)
+  - AFNetworking/Security (2.6.1)
+  - AFNetworking/Serialization (2.6.1)
+  - AFNetworking/UIKit (2.6.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Bolts (1.3.0):
+    - Bolts/AppLinks (= 1.3.0)
+    - Bolts/Tasks (= 1.3.0)
+  - Bolts/AppLinks (1.3.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.3.0)
+  - CompactConstraint (0.1.0)
+  - CSStickyHeaderFlowLayout (0.2.10)
+  - EGOCache (2.1.3)
+  - FastttCamera (0.3.4):
+    - FastttCamera/Default (= 0.3.4)
+  - FastttCamera/Default (0.3.4)
+  - FBSDKCoreKit (4.7.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.7.0)
+    - FBSDKCoreKit/no-arc (= 4.7.0)
+  - FBSDKCoreKit/arc (4.7.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.7.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.7.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.7.0):
+    - FBSDKCoreKit
+  - INTULocationManager (4.0.0)
+  - MGSpotyViewController (0.3.1)
+  - Parse (1.9.0):
+    - Bolts/Tasks (>= 1.3.0)
+  - ParseFacebookUtilsV4 (1.9.0):
+    - Bolts/Tasks (>= 1.3.0)
+    - FBSDKCoreKit (~> 4.7)
+    - FBSDKLoginKit (~> 4.7)
+    - Parse (~> 1.9)
+  - RXPromise (0.13.1)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - SlackTextViewController (1.7.1)
+  - socket.IO (0.5.2):
+    - SocketRocket (~> 0.2)
+  - SocketRocket (0.4.1)
+  - SpinKit (1.2.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - CompactConstraint (~> 0.1)
+  - CSStickyHeaderFlowLayout (~> 0.2)
+  - EGOCache
+  - FastttCamera (~> 0.3)
+  - FBSDKCoreKit (~> 4.5)
+  - FBSDKLoginKit (~> 4.5)
+  - FBSDKShareKit (~> 4.5)
+  - INTULocationManager (~> 4.0)
+  - MGSpotyViewController (~> 0.1)
+  - Parse (~> 1.8)
+  - ParseFacebookUtilsV4 (~> 1.8)
+  - RXPromise
+  - SDWebImage
+  - SlackTextViewController
+  - socket.IO
+  - SpinKit (~> 1.2)
+
+SPEC CHECKSUMS:
+  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
+  CompactConstraint: 562187c821afcc510536a3df799a16c25bea3d9b
+  CSStickyHeaderFlowLayout: 5366582779d8b7c9ba9b9cc729c218cc23888776
+  EGOCache: f0295dbe041156acabd39021354ad1045ee49e72
+  FastttCamera: 51f16712cbd5bdb08bc6231b957325c6be5e478d
+  FBSDKCoreKit: eb580bfc2040ad44f4c0b4f4d0befb1d35bce59c
+  FBSDKLoginKit: 01bce8dd3f3a26a023b0ba4ffdde7ef5062889fe
+  FBSDKShareKit: 1f927bb05e4d36a99d5d5bf2f4b1ff294ce3e15c
+  INTULocationManager: 754f2800415378b7bb2c07be103449e1f6a2cc70
+  MGSpotyViewController: e55176f106779a776913d23019c1343704e1dadf
+  Parse: 712efbc476d4f47b0f96b70db7e53101575753aa
+  ParseFacebookUtilsV4: aadebfaaaf4a45bf0a0992863bf48c8fc49189e3
+  RXPromise: 1aaff7ad7ac17c7e8dd9ea0169d13ed8df3654d2
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SlackTextViewController: 139ffc5b09276ff5ac1609ac78eafab702fc974e
+  socket.IO: eaaaea33481d8a81d8f78e331f0c72ba44758036
+  SocketRocket: ee0b5c34182d37bb4f1f8d628bbe737718126daa
+  SpinKit: 65906a8b534a4e14cbfd3f8b0b6c329131faef4a
+
+COCOAPODS: 0.38.2

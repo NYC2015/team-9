@@ -1,0 +1,1 @@
+../../../MGSpotyViewController/MGSpotyViewController/ImageEffects/UIImage+ImageEffects.h
