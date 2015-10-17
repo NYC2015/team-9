@@ -29,6 +29,7 @@ static NSString* cellID = @"campaignCell";
     [self.tableView registerClass:[CampaignTableViewCell class] forCellReuseIdentifier:cellID];
     
     self.campaigns = [[NSMutableArray alloc] init];
+    self.campaignImages = [[NSMutableArray alloc] init];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -74,7 +75,7 @@ static NSString* cellID = @"campaignCell";
             // 3. Configure the new posts
             // 4. Remove the old posts and add the new posts
 //            NSLog(@"success in geo query! \n %@", objects);
-            [self.campaigns addObjectsFromArray:objects];
+            self.campaigns = [objects mutableCopy];
             NSLog(@"%@", self.campaigns);
             [self.tableView reloadData];
             
@@ -112,6 +113,7 @@ static NSString* cellID = @"campaignCell";
     PFFile* image = dataSourceItem[@"backgroundImage"];
     [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         [cell.background setImage:[UIImage imageWithData:data]];
+        [self.campaignImages addObject:[UIImage imageWithData:data]];
     }];
     
     
@@ -124,7 +126,26 @@ static NSString* cellID = @"campaignCell";
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+//    PFObject* dataSourceItem = ((PFObject*)[self.campaigns objectAtIndex:indexPath.row]);
+//    PFFile* image = dataSourceItem[@"backgroundImage"];
+//    [image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+//        campaignHomepageTableViewController* homepage = [[campaignHomepageTableViewController alloc] init];
+//        [self presentViewController:homepage animated:YES completion:^{
+//            
+//        }];
+//    }];
+    
+    campaignFormTableViewController* homepage = [[campaignFormTableViewController alloc] init];
+    
+    [self presentViewController:homepage animated:YES completion:nil];
 
+    
+//    campaignFormViewController* form = [[campaignFormViewController alloc] init];
+
+}
 
 /*
 // Override to support conditional editing of the table view.
